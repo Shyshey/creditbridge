@@ -1,41 +1,40 @@
 export default function Home() {
-  const sections = [
-    { id: 'about', title: 'About CreditBridge' },
-    { id: 'services', title: 'Our Services' },
-    { id: 'contact', title: 'Contact Us' },
+  const nav = [
+    { label: 'About CreditBridge', href: '/about' },
+    { label: 'Our Services', href: '/services' },
+    { label: 'Contact Us', href: '/contact' },
   ];
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center relative bg-cover bg-center bg-fixed"
+    <section className="min-h-screen flex flex-col items-center justify-center relative bg-cover bg-center bg-fixed text-white"
              style={{ backgroundImage: "url('/images/background.png')" }}>
-      {/* semi-transparent overlay so text pops */}
-      <div className="absolute inset-0 bg-black/40" />
 
-      {/* top bar: logo left / Contact right */}
-      <header className="w-full max-w-5xl mx-auto px-6 py-6 flex items-center justify-between relative z-10">
-        <img src="/logo.png" alt="CreditBridge" className="h-10" />
+      {/* subtle dark overlay so text pops */}
+      <div className="absolute inset-0 bg-black/50" />
+
+      {/* top bar */}
+      <header className="w-full max-w-5xl mx-auto px-6 py-8 flex items-center justify-between relative z-10">
+        <img src="/logo.png" alt="CreditBridge" className="h-12" />
         <a href="/contact"
-           className="px-5 py-2 border-2 border-white text-white rounded hover:bg-white hover:text-black transition">
+           className="px-5 py-2 border-2 border-white rounded hover:bg-white hover:text-black transition">
           Contact Us
         </a>
       </header>
 
-      {/* centered list of sections */}
-      <main className="relative z-10 text-center text-white px-6">
-        <h1 className="text-4xl md:text-5xl font-bold mb-10">CreditBridge</h1>
-        <ul className="space-y-6">
-          {sections.map((s) => (
-            <li key={s.id}>
-              <a href={`/${s.id}`}
-                 className="inline-block text-xl md:text-2xl font-medium hover:underline">
-                {s.title}
-              </a>
-            </li>
+      {/* centre content */}
+      <main className="relative z-10 text-center px-6">
+        <h1 className="text-5xl md:text-6xl font-bold mb-12">CreditBridge</h1>
+        <div className="grid gap-6">
+          {nav.map((n) => (
+            <a key={n.href} href={n.href}
+               className="block text-xl md:text-2xl font-medium border border-white/40 rounded-lg px-8 py-4 hover:bg-white/10 transition">
+              {n.label}
+            </a>
           ))}
-        </ul>
+        </div>
       </main>
 
-      {/* push everything up a bit */}
+      {/* pushes everything up slightly */}
       <div className="flex-grow" />
     </section>
   );
