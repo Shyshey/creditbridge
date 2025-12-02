@@ -12,13 +12,9 @@ export default function Home() {
       {/* subtle dark overlay so text pops */}
       <div className="absolute inset-0 bg-black/50" />
 
-      {/* top bar */}
-      <header className="w-full max-w-5xl mx-auto px-6 py-8 flex items-center justify-between relative z-10">
+      {/* top bar: logo only on the left */}
+      <header className="w-full max-w-5xl mx-auto px-6 py-8 flex items-center justify-start relative z-10">
         <img src="/logo.png" alt="CreditBridge" className="h-12" />
-        <a href="/contact"
-           className="px-5 py-2 border-2 border-white rounded hover:bg-white hover:text-black transition">
-          Contact Us
-        </a>
       </header>
 
       {/* centre content */}
