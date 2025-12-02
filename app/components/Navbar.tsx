@@ -13,7 +13,6 @@ export default function Navbar() {
         <div className="flex justify-between h-20">
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-3">
-              {/* Replace 'logo.png' with your actual logo filename */}
               <Image 
                 src="/images/logo.png" 
                 alt="CreditBridge Logo" 
@@ -27,7 +26,6 @@ export default function Navbar() {
             </Link>
           </div>
           
-          {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             <Link href="/" className="text-gray-700 hover:text-blue-600 transition font-medium">
               Home
@@ -43,10 +41,10 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-700 hover:text-blue-600"
             >
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" s
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                {isOpen ? (
